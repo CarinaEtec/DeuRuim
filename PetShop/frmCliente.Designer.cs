@@ -49,11 +49,12 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnBuscarCod = new System.Windows.Forms.Button();
             this.btnBuscarCep = new System.Windows.Forms.Button();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.btnValidarCpf = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExcluir
@@ -62,7 +63,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(376, 369);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(94, 30);
-            this.btnExcluir.TabIndex = 27;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -72,7 +73,7 @@
             this.btnEditar.Location = new System.Drawing.Point(288, 369);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(82, 30);
-            this.btnEditar.TabIndex = 26;
+            this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
@@ -82,7 +83,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(100, 369);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(82, 30);
-            this.btnSalvar.TabIndex = 24;
+            this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Gravar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -93,7 +94,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(188, 369);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 30);
-            this.btnBuscar.TabIndex = 25;
+            this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -184,14 +185,14 @@
             this.txtCodigo.Location = new System.Drawing.Point(126, 32);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 37;
+            this.txtCodigo.TabIndex = 1;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(126, 66);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(344, 20);
-            this.txtNome.TabIndex = 38;
+            this.txtNome.TabIndex = 3;
             // 
             // txtEndereco
             // 
@@ -212,14 +213,14 @@
             this.txtNumero.Location = new System.Drawing.Point(126, 236);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtNumero.TabIndex = 43;
+            this.txtNumero.TabIndex = 7;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(126, 308);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(344, 20);
-            this.txtEmail.TabIndex = 45;
+            this.txtEmail.TabIndex = 9;
             // 
             // mskTelefone
             // 
@@ -227,7 +228,7 @@
             this.mskTelefone.Mask = "(00)00000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(100, 20);
-            this.mskTelefone.TabIndex = 46;
+            this.mskTelefone.TabIndex = 8;
             // 
             // btnNovo
             // 
@@ -235,18 +236,10 @@
             this.btnNovo.Location = new System.Drawing.Point(12, 369);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(82, 30);
-            this.btnNovo.TabIndex = 47;
+            this.btnNovo.TabIndex = 10;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // mskCpf
-            // 
-            this.mskCpf.Location = new System.Drawing.Point(126, 100);
-            this.mskCpf.Mask = "000,000,000-00";
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(100, 20);
-            this.mskCpf.TabIndex = 48;
             // 
             // mskCep
             // 
@@ -254,7 +247,7 @@
             this.mskCep.Mask = "00,000-000";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(100, 20);
-            this.mskCep.TabIndex = 49;
+            this.mskCep.TabIndex = 5;
             // 
             // btnVoltar
             // 
@@ -273,7 +266,7 @@
             this.btnBuscarCod.Location = new System.Drawing.Point(376, 25);
             this.btnBuscarCod.Name = "btnBuscarCod";
             this.btnBuscarCod.Size = new System.Drawing.Size(94, 30);
-            this.btnBuscarCod.TabIndex = 51;
+            this.btnBuscarCod.TabIndex = 2;
             this.btnBuscarCod.Text = "Buscar";
             this.btnBuscarCod.UseVisualStyleBackColor = true;
             this.btnBuscarCod.Click += new System.EventHandler(this.btnBuscarCod_Click);
@@ -284,21 +277,40 @@
             this.btnBuscarCep.Location = new System.Drawing.Point(376, 125);
             this.btnBuscarCep.Name = "btnBuscarCep";
             this.btnBuscarCep.Size = new System.Drawing.Size(94, 30);
-            this.btnBuscarCep.TabIndex = 52;
+            this.btnBuscarCep.TabIndex = 6;
             this.btnBuscarCep.Text = "Buscar";
             this.btnBuscarCep.UseVisualStyleBackColor = true;
             this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(126, 100);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtCpf.TabIndex = 4;
+            // 
+            // btnValidarCpf
+            // 
+            this.btnValidarCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidarCpf.Location = new System.Drawing.Point(376, 93);
+            this.btnValidarCpf.Name = "btnValidarCpf";
+            this.btnValidarCpf.Size = new System.Drawing.Size(94, 30);
+            this.btnValidarCpf.TabIndex = 52;
+            this.btnValidarCpf.Text = "Validar";
+            this.btnValidarCpf.UseVisualStyleBackColor = true;
+            this.btnValidarCpf.Click += new System.EventHandler(this.btnValidarCpf_Click);
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 450);
+            this.ClientSize = new System.Drawing.Size(528, 450);
+            this.Controls.Add(this.btnValidarCpf);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.btnBuscarCep);
             this.Controls.Add(this.btnBuscarCod);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.mskCep);
-            this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.txtEmail);
@@ -350,10 +362,11 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.MaskedTextBox mskCep;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnBuscarCod;
         private System.Windows.Forms.Button btnBuscarCep;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.Button btnValidarCpf;
     }
 }

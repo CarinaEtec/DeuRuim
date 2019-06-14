@@ -64,13 +64,13 @@ namespace PetShop.DAO
             }
         }
 
-        public Cliente BuscaPorId(int codcli)
+        public Cliente BuscaPorId(int CodCli)
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "Select * from Cliente where codcli=@codcli";
 
-            comando.Parameters.AddWithValue("@codcli", codcli);
+            comando.Parameters.AddWithValue("@codcli", CodCli);
 
             MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
 
@@ -78,9 +78,9 @@ namespace PetShop.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                cliente.CodCli = (int)dr["codCli"];
+                cliente.CodCli = (int)dr["CodCli"];
                 cliente.Nome = (string)dr["nome"];
-                cliente.Cpf = (int)dr["cpf"];
+                cliente.Cpf = (long)dr["cpf"];
                 cliente.Cep = (string)dr["cep"];
                 cliente.Endereco = (string)dr["endereco"];
                 cliente.Cidade = (string)dr["cidade"];
@@ -142,7 +142,7 @@ namespace PetShop.DAO
 
                     cliente.CodCli = (int)dr["codCli"];
                     cliente.Nome = (string)dr["nome"];
-                    cliente.Cpf = (int)dr["cpf"];
+                    cliente.Cpf = (long)dr["cpf"];
                     cliente.Cep = (string)dr["cep"];
                     cliente.Endereco = (string)dr["endereco"];
                     cliente.Cidade = (string)dr["cidade"];

@@ -23,7 +23,7 @@ namespace PetShop
         {
             txtCodigo.Enabled = false;
             txtNome.Enabled = false;
-            mskCpf.Enabled = false;
+            txtCpf.Enabled = false;
             mskCep.Enabled = false;
             txtEndereco.Enabled = false;
             txtCidade.Enabled = false;
@@ -36,13 +36,15 @@ namespace PetShop
             btnExcluir.Enabled = false;
             btnBuscarCod.Visible = false;
             btnBuscarCep.Visible = false;
+            btnValidarCpf.Visible = false;
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             txtCodigo.Enabled = false;
             txtNome.Enabled = true;
-            mskCpf.Enabled = true;
+            txtCpf.Enabled = true;
             mskCep.Enabled = true;
             txtNumero.Enabled = true;
             mskTelefone.Enabled = true;
@@ -53,6 +55,8 @@ namespace PetShop
             btnExcluir.Enabled = false;
             btnBuscar.Enabled = false;
             btnBuscarCep.Visible = true;
+            btnValidarCpf.Visible = true;
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -72,6 +76,46 @@ namespace PetShop
 
         private void btnBuscarCod_Click(object sender, EventArgs e)
         {
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
+
+            try
+            {
+                cliente.CodCli = Convert.ToInt16(txtCodigo.Text);
+                clienteBO.Buscar(cliente);
+
+                if (cliente.Nome == "")
+                {
+                    MessageBox.Show("Cliente não encontrado");
+                    txtNome.Clear();
+                    txtCpf.Clear();
+                    mskCep.Clear();
+                    txtEndereco.Clear();
+                    txtCidade.Clear();
+                    txtNumero.Clear();
+                    mskTelefone.Clear();
+                    txtEmail.Clear();
+                }
+                else
+                {
+                    cliente.Nome = txtNome.Text;
+                    cliente.Cpf = Convert.ToInt64(txtCpf.Text);
+                    cliente.Cep = mskCep.Text;
+                    cliente.Endereco = txtEndereco.Text;
+                    cliente.Cidade = txtCidade.Text;
+                    cliente.Numero = txtNumero.Text;
+                    cliente.Telefone = mskTelefone.Text;
+                    cliente.Email = txtEmail.Text;
+                }
+            }
+            catch
+            {
+                  MessageBox.Show("Preencha corretamente as informações");
+
+
+            }
+
+
             btnExcluir.Enabled = true;
             btnEditar.Enabled = true;
             btnBuscar.Enabled = false;
@@ -102,7 +146,7 @@ namespace PetShop
             ClienteBO clienteBO = new ClienteBO();
 
             cliente.Nome = txtNome.Text;
-            cliente.Cpf = Convert.ToInt16(mskCpf.Text);
+            cliente.Cpf = Convert.ToInt64(txtCpf.Text);
             cliente.Cep = mskCep.Text;
             cliente.Endereco = txtEndereco.Text;
             cliente.Cidade = txtCidade.Text;
@@ -112,6 +156,46 @@ namespace PetShop
 
             clienteBO.Gravar(cliente);
             MessageBox.Show("Cliente cadastrado com sucesso");
+
+
+
+            txtNome.Clear();
+            txtCpf.Clear();
+            mskCep.Clear();
+            txtEndereco.Clear();
+            txtCidade.Clear();
+            txtNumero.Clear();
+            mskTelefone.Clear();
+            txtEmail.Clear();
+
+            txtNome.Enabled = false;
+            txtCpf.Enabled = false; ;
+            mskCep.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtCidade.Enabled = false;
+            txtNumero.Enabled = false;
+            mskTelefone.Enabled = false;
+            txtEmail.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnBuscar.Enabled = true;
+
+            btnValidarCpf.Visible = false;
+            btnBuscarCep.Visible = false;
+        }
+
+        private void btnValidarCpf_Click(object sender, EventArgs e)
+        {
+            string valor = txtCpf.Text;
+
+            if (ValidacaoCPF.IsCpf(valor))
+            {
+                MessageBox.Show(" CPF Válido !");
+            }
+            else
+            {
+                MessageBox.Show(" CPF Inválido !");
+                txtCpf.Clear();
+            }
         }
     }
 }

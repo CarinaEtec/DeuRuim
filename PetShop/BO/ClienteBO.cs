@@ -56,19 +56,19 @@ namespace PetShop.BO
             }
         }
 
-        public IList<Cliente> BuscarPorNome(Cliente cliente)
-        {
-            ClienteDAO clienteDAO = new ClienteDAO();
+        //public IList<Cliente> BuscarPorNome(Cliente cliente)
+        //{
+        //    ClienteDAO clienteDAO = new ClienteDAO();
 
-            if (cliente.Nome != "")
-            {
-                IList<Cliente> clienteTemp = clienteDAO.BuscaPorCliente(cliente.Nome);
-                return clienteTemp;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        //    if (cliente.Nome != "")
+        //    {
+        //        IList<Cliente> clienteTemp = clienteDAO.BuscaPorCliente(cliente.Nome);
+        //        return clienteTemp;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }
