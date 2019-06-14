@@ -1,0 +1,16 @@
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.Form1.resources
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.frmCliente.resources
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\MySql.Data.dll
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\Google.Protobuf.dll
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\carina\Desktop\PetShop\PetShop\bin\Debug\MySql.Data.xml
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.pdb
