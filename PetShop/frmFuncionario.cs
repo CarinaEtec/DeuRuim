@@ -278,6 +278,7 @@ namespace PetShop
             Funcionario funcionario = new Funcionario();
             FuncionarioBO funcionarioBO = new FuncionarioBO();
 
+            funcionario.Cod = Convert.ToInt16(txtCodigo.Text);
             funcionario.Nome = txtNome.Text;
             funcionario.Cpf = Convert.ToInt64(txtCpf.Text);
             funcionario.Cep = mskCep.Text;

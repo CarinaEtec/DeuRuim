@@ -58,31 +58,6 @@ namespace PetShop.DAO
 
 
 
-
-
-
-
-        //dr.Read();
-        //cliente.Cod = (int)dr["codcli"];
-        //cliente.Nome = (string)dr["nome"];
-        //cliente.Cpf = (long)dr["cpf"];
-        //cliente.Cep = (string)dr["cep"];
-        //cliente.Endereco = (string)dr["endereco"];
-        //cliente.Cidade = (string)dr["cidade"];
-        //cliente.Numero = (string)dr["numero"];
-        //cliente.Telefone = (string)dr["telefone"];
-        //cliente.Email = (string)dr["email"];
-
-        //cliente.Cod = 0;
-        //cliente.Nome = "";
-        //cliente.Cpf = 0;
-        //cliente.Cep = "";
-        //cliente.Endereco = "";
-        //cliente.Cidade = "";
-        //cliente.Numero = "";
-        //cliente.Telefone = "";
-        //cliente.Email = "";
-
         public void Update(Cliente cliente)
         {
             try
@@ -109,8 +84,33 @@ namespace PetShop.DAO
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
 
-
-
         }
+
+
+
+
+
+        //dr.Read();
+        //cliente.Cod = (int)dr["codcli"];
+        //cliente.Nome = (string)dr["nome"];
+        //cliente.Cpf = (long)dr["cpf"];
+        //cliente.Cep = (string)dr["cep"];
+        //cliente.Endereco = (string)dr["endereco"];
+        //cliente.Cidade = (string)dr["cidade"];
+        //cliente.Numero = (string)dr["numero"];
+        //cliente.Telefone = (string)dr["telefone"];
+        //cliente.Email = (string)dr["email"];
+
+        //cliente.Cod = 0;
+        //cliente.Nome = "";
+        //cliente.Cpf = 0;
+        //cliente.Cep = "";
+        //cliente.Endereco = "";
+        //cliente.Cidade = "";
+        //cliente.Numero = "";
+        //cliente.Telefone = "";
+        //cliente.Email = "";
+
+
     }
 }

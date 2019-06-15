@@ -45,26 +45,37 @@ namespace PetShop.DAO
                 MySqlCommand comando = new MySqlCommand();
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = "Update funcionario set nome=@nome, cpf=@cpf, cep=@cep, endereco=@endereco, cidade=@cidade, " +
-                    " numero=@numero, telefone=@telefone, email=@email, carttrab=@carttrab, salario=@salario where codfunc=@codfunc";
+                    "numero=@numero, telefone=@telefone, carttrab=@carttrab, salario=@salario where codfunc=@codfunc";
 
                 comando.Parameters.AddWithValue("@nome", funcionario.Nome);
                 comando.Parameters.AddWithValue("@cpf", funcionario.Cpf);
                 comando.Parameters.AddWithValue("@cep", funcionario.Cep);
                 comando.Parameters.AddWithValue("@endereco", funcionario.Endereco);
                 comando.Parameters.AddWithValue("@cidade", funcionario.Cidade);
-                comando.Parameters.AddWithValue("@numero", funcionario.Numero);//
+                comando.Parameters.AddWithValue("@numero", funcionario.Numero);
                 comando.Parameters.AddWithValue("@telefone", funcionario.Telefone);
-                comando.Parameters.AddWithValue("@carttrab", funcionario.Carttrab);//
+                comando.Parameters.AddWithValue("@carttrab", funcionario.Carttrab);
                 comando.Parameters.AddWithValue("@salario", funcionario.Salario);
+
                 comando.Parameters.AddWithValue("@codfunc", funcionario.Cod);
 
-                ConexaoBanco.CRUD(comando); 
+                ConexaoBanco.CRUD(comando);
             }
             catch (Exception ex)
             {
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
+
         }
+
+
+
+
+
+
+
+
+
 
         public Funcionario BuscaPorCod(int Cod)
         {

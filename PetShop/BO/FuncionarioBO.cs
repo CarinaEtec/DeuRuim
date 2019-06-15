@@ -19,14 +19,34 @@ namespace PetShop.BO
             }
         }
 
+        public void Deletar(Funcionario funcionario)
+        {
+            FuncionarioDAO funcionarioDao = new FuncionarioDAO();
+
+            if (funcionario.Cod > 0)
+            {
+                funcionarioDao.Delete(funcionario);
+            }
+        }
+
         public void Editar(Funcionario funcionario)
         {
             FuncionarioDAO funcionarioDao = new FuncionarioDAO();
-            if ((funcionario.Nome != "") && (funcionario.Telefone != ""))
+            if (funcionario.Nome != "")
             {
                 funcionarioDao.Update(funcionario);
             }
         }
+
+
+
+
+
+
+
+
+
+
 
         public void Buscar(Funcionario funcionario)
         {
@@ -49,16 +69,5 @@ namespace PetShop.BO
 
             }
         }
-
-        public void Deletar(Funcionario funcionario)
-        {
-            FuncionarioDAO funcionarioDao = new FuncionarioDAO();
-
-            if (funcionario.Cod > 0)
-            {
-                funcionarioDao.Delete(funcionario);
-            }
-        }
-
     }
 }
