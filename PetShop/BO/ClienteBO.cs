@@ -13,7 +13,7 @@ namespace PetShop.BO
         public void Gravar(Cliente cliente)
         {
             ClienteDAO clienteDao = new ClienteDAO();
-            if (cliente.Nome != "")// && (cliente.Cpf != ""))
+            if ((cliente.Nome != "") && (cliente.Telefone != ""))
             {
                 clienteDao.Insert(cliente);
             }
@@ -22,7 +22,7 @@ namespace PetShop.BO
         public void Editar(Cliente cliente)
         {
             ClienteDAO clienteDao = new ClienteDAO();
-            if ((cliente.Nome != "") )//&& (autor.Nacionalidade != ""))
+            if ((cliente.Nome != "") && (cliente.Telefone != ""))
             {
                 clienteDao.Update(cliente);
             }
@@ -32,9 +32,9 @@ namespace PetShop.BO
         {
             ClienteDAO clienteDao = new ClienteDAO();
 
-            if (cliente.CodCli > 0)
+            if (cliente.Cod > 0)
             {
-                var clienteTemp = clienteDao.BuscaPorId(cliente.CodCli);
+                var clienteTemp = clienteDao.BuscaPorCod(cliente.Cod);
 
                 cliente.Nome = clienteTemp.Nome;
                 cliente.Cpf = clienteTemp.Cpf;
@@ -50,25 +50,12 @@ namespace PetShop.BO
         public void Deletar(Cliente cliente)
         {
             ClienteDAO clienteDao = new ClienteDAO();
-            if (cliente.CodCli > 0)
+
+            if (cliente.Cod > 0)
             {
                 clienteDao.Delete(cliente);
             }
         }
 
-        //public IList<Cliente> BuscarPorNome(Cliente cliente)
-        //{
-        //    ClienteDAO clienteDAO = new ClienteDAO();
-
-        //    if (cliente.Nome != "")
-        //    {
-        //        IList<Cliente> clienteTemp = clienteDAO.BuscaPorCliente(cliente.Nome);
-        //        return clienteTemp;
-        //    }
-        //    else
-        //    {
-        //        return null;
-        //    }
-        //}
     }
 }

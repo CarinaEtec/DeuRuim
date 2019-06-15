@@ -8,7 +8,7 @@ namespace PetShop.Model
 {
     class Pessoa
     {
-        private int codCli;
+        private int cod;
         private string nome;
         private long cpf;
         private string cep;
@@ -18,7 +18,7 @@ namespace PetShop.Model
         private string telefone;
 
 
-        public int CodCli { get => codCli; set => codCli = value; }
+        public int Cod { get => cod; set => cod = value; }
         public string Nome { get => nome; set => nome = value; }
         public long Cpf { get => cpf; set => cpf = value; }
         public string Cep { get => cep; set => cep = value; }

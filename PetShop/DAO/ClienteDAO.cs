@@ -54,7 +54,7 @@ namespace PetShop.DAO
                 comando.Parameters.AddWithValue("@numero", cliente.Numero);//
                 comando.Parameters.AddWithValue("@telefone", cliente.Telefone);
                 comando.Parameters.AddWithValue("@email", cliente.Email);
-                comando.Parameters.AddWithValue("@codcli", cliente.CodCli);
+                comando.Parameters.AddWithValue("@codcli", cliente.Cod);
 
                 ConexaoBanco.CRUD(comando); // Está sendo enviado p/ o método CRUD
             }
@@ -64,13 +64,13 @@ namespace PetShop.DAO
             }
         }
 
-        public Cliente BuscaPorId(int CodCli)
+        public Cliente BuscaPorCod(int Cod)
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from Cliente where codcli=@codcli";
+            comando.CommandText = "Select * from Cliente where cod=@codcli";
 
-            comando.Parameters.AddWithValue("@codcli", CodCli);
+            comando.Parameters.AddWithValue("@codcli", Cod);
 
             MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
 
@@ -78,7 +78,7 @@ namespace PetShop.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                cliente.CodCli = (int)dr["CodCli"];
+                cliente.Cod = (int)dr["CodCli"];
                 cliente.Nome = (string)dr["nome"];
                 cliente.Cpf = (long)dr["cpf"];
                 cliente.Cep = (string)dr["cep"];
@@ -91,7 +91,7 @@ namespace PetShop.DAO
             else
             {
                 //zera o objeto
-                cliente.CodCli = 0;
+                cliente.Cod = 0;
                 cliente.Nome = "";
                 cliente.Cpf = 0;
                 cliente.Cep = "";
@@ -112,7 +112,7 @@ namespace PetShop.DAO
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = "Delete from cliente where codcli=@codcli";
 
-                comando.Parameters.AddWithValue("@codcli", cliente.CodCli);
+                comando.Parameters.AddWithValue("@codcli", cliente.Cod);
 
                 ConexaoBanco.CRUD(comando);
             }
@@ -120,45 +120,6 @@ namespace PetShop.DAO
             {
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
-        }
-
-        public IList<Cliente> BuscaPorCliente(string nome)
-        {
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from Cliente where nome like @nome";
-
-            comando.Parameters.AddWithValue("@nome", "%" + nome + "%");
-
-            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
-
-            IList<Cliente> clientes = new List<Cliente>();
-
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    Cliente cliente = new Cliente();
-
-                    cliente.CodCli = (int)dr["codCli"];
-                    cliente.Nome = (string)dr["nome"];
-                    cliente.Cpf = (long)dr["cpf"];
-                    cliente.Cep = (string)dr["cep"];
-                    cliente.Endereco = (string)dr["endereco"];
-                    cliente.Cidade = (string)dr["cidade"];
-                    cliente.Numero = (string)dr["numero"];
-                    cliente.Telefone = (string)dr["telefone"];
-                    cliente.Email = (string)dr["email"];
-
-                    clientes.Add(cliente);
-                }
-            }
-            else
-            {
-                clientes = null;
-
-            }
-            return clientes;
         }
     }
 }

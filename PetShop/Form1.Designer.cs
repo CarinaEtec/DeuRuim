@@ -30,6 +30,7 @@
         {
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnPets = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCliente
@@ -53,11 +54,23 @@
             this.btnPets.Text = "Pet";
             this.btnPets.UseVisualStyleBackColor = true;
             // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuncionario.Location = new System.Drawing.Point(22, 192);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(163, 51);
+            this.btnFuncionario.TabIndex = 2;
+            this.btnFuncionario.Text = "Funcionário";
+            this.btnFuncionario.UseVisualStyleBackColor = true;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 244);
+            this.ClientSize = new System.Drawing.Size(228, 313);
+            this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnCliente);
             this.Name = "Form1";
@@ -70,6 +83,7 @@
 
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnPets;
+        private System.Windows.Forms.Button btnFuncionario;
     }
 }
 

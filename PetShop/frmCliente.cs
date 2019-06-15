@@ -81,7 +81,7 @@ namespace PetShop
 
             try
             {
-                cliente.CodCli = Convert.ToInt16(txtCodigo.Text);
+                cliente.Cod = Convert.ToInt16(txtCodigo.Text);
                 clienteBO.Buscar(cliente);
 
                 if (cliente.Nome == "")
@@ -110,15 +110,27 @@ namespace PetShop
             }
             catch
             {
-                  MessageBox.Show("Preencha corretamente as informações");
-
-
+                MessageBox.Show("Preencha corretamente as informações");
             }
-
 
             btnExcluir.Enabled = true;
             btnEditar.Enabled = true;
             btnBuscar.Enabled = false;
+
+            btnValidarCpf.Visible = true;
+            btnBuscarCep.Visible = true;
+
+
+            /*********************** PARA TESTES *************** DEPOIS APAGAR ********************/
+
+
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
+            mskCep.Enabled = true;
+            txtNumero.Enabled = true;
+            mskTelefone.Enabled = true;
+            txtEmail.Enabled = true;
         }
 
         private void btnBuscarCep_Click(object sender, EventArgs e)
@@ -196,6 +208,106 @@ namespace PetShop
                 MessageBox.Show(" CPF Inválido !");
                 txtCpf.Clear();
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
+
+            try
+            {
+                cliente.Cod = Convert.ToInt16(txtCodigo.Text);
+                clienteBO.Deletar(cliente);
+
+                MessageBox.Show("Cliente excluído com sucesso");
+            }
+            catch
+            {
+                MessageBox.Show("Preencha corretamente os campos e/ou verifique se esses dados não estão sendo usados");
+            }
+
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = false;
+            txtCpf.Enabled = false;
+            mskCep.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtCidade.Enabled = false;
+            txtNumero.Enabled = false;
+            mskTelefone.Enabled = false;
+            txtEmail.Enabled = false;
+
+
+            btnSalvar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnBuscarCod.Visible = false;
+            btnBuscarCep.Visible = false;
+            btnValidarCpf.Visible = false;
+
+            btnNovo.Enabled = true;
+            btnBuscar.Enabled = true;
+
+            txtNome.Clear();
+            txtCpf.Clear();
+            mskCep.Clear();
+            txtEndereco.Clear();
+            txtCidade.Clear();
+            txtNumero.Clear();
+            mskTelefone.Clear();
+            txtEmail.Clear();
+            txtCodigo.Clear();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
+
+            cliente.Nome = txtNome.Text;
+            cliente.Cpf = Convert.ToInt64(txtCpf.Text);
+            cliente.Cep = mskCep.Text;
+            cliente.Endereco = txtEndereco.Text;
+            cliente.Cidade = txtCidade.Text;
+            cliente.Numero = txtNumero.Text;
+            cliente.Telefone = mskTelefone.Text;
+            cliente.Email = txtEmail.Text;
+
+            clienteBO.Editar(cliente);
+            MessageBox.Show("Cliente editado com sucesso");
+
+
+
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = false;
+            txtCpf.Enabled = false;
+            mskCep.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtCidade.Enabled = false;
+            txtNumero.Enabled = false;
+            mskTelefone.Enabled = false;
+            txtEmail.Enabled = false;
+
+
+            btnSalvar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnBuscarCod.Visible = false;
+            btnBuscarCep.Visible = false;
+            btnValidarCpf.Visible = false;
+
+            btnNovo.Enabled = true;
+            btnBuscar.Enabled = true;
+
+            txtNome.Clear();
+            txtCpf.Clear();
+            mskCep.Clear();
+            txtEndereco.Clear();
+            txtCidade.Clear();
+            txtNumero.Clear();
+            mskTelefone.Clear();
+            txtEmail.Clear();
+            txtCodigo.Clear();
         }
     }
 }
