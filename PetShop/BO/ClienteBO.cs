@@ -19,34 +19,6 @@ namespace PetShop.BO
             }
         }
 
-        public void Editar(Cliente cliente)
-        {
-            ClienteDAO clienteDao = new ClienteDAO();
-            if ((cliente.Nome != "") && (cliente.Telefone != ""))
-            {
-                clienteDao.Update(cliente);
-            }
-        }
-
-        public void Buscar(Cliente cliente)
-        {
-            ClienteDAO clienteDao = new ClienteDAO();
-
-            if (cliente.Cod > 0)
-            {
-                var clienteTemp = clienteDao.BuscaPorCod(cliente.Cod);
-
-                cliente.Nome = clienteTemp.Nome;
-                cliente.Cpf = clienteTemp.Cpf;
-                cliente.Cep = clienteTemp.Cep;
-                cliente.Endereco = clienteTemp.Endereco;
-                cliente.Cidade = clienteTemp.Cidade;
-                cliente.Numero = clienteTemp.Numero;
-                cliente.Telefone = clienteTemp.Telefone;
-                cliente.Email = clienteTemp.Email;
-            }
-        }
-
         public void Deletar(Cliente cliente)
         {
             ClienteDAO clienteDao = new ClienteDAO();
@@ -57,5 +29,26 @@ namespace PetShop.BO
             }
         }
 
+
+
+        //cliente.Nome = clienteTemp.Nome;
+        //cliente.Cpf = clienteTemp.Cpf;
+        //cliente.Cep = clienteTemp.Cep;
+        //cliente.Endereco = clienteTemp.Endereco;
+        //cliente.Cidade = clienteTemp.Cidade;
+        //cliente.Numero = clienteTemp.Numero;
+        //cliente.Telefone = clienteTemp.Telefone;
+        //cliente.Email = clienteTemp.Email;
+
+
+
+        public void Editar(Cliente cliente)
+        {
+            ClienteDAO clienteDao = new ClienteDAO();
+            if (cliente.Nome != "") 
+            {
+                clienteDao.Update(cliente);
+            }
+        }
     }
 }

@@ -32,5 +32,13 @@ namespace PetShop
             funcionarios.Closed += (s, args) => this.Close();
             funcionarios.Show();
         }
+
+        private void btnPets_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPet pet = new frmPet();
+            pet.Closed += (s, args) => this.Close();
+            pet.Show();
+        }
     }
 }

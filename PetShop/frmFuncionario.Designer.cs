@@ -355,7 +355,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnBuscar);
             this.Name = "frmFuncionario";
-            this.Text = "frmFuncionario";
+            this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.frmFuncionario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

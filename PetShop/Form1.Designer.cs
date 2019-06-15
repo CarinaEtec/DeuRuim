@@ -53,6 +53,7 @@
             this.btnPets.TabIndex = 1;
             this.btnPets.Text = "Pet";
             this.btnPets.UseVisualStyleBackColor = true;
+            this.btnPets.Click += new System.EventHandler(this.btnPets_Click);
             // 
             // btnFuncionario
             // 

@@ -21,7 +21,9 @@ namespace PetShop
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            txtCodigo.Enabled = false;
+            //            txtCodigo.Enabled = false;
+
+            txtCodigo.Enabled = true;
             txtNome.Enabled = false;
             txtCpf.Enabled = false;
             mskCep.Enabled = false;
@@ -76,42 +78,44 @@ namespace PetShop
 
         private void btnBuscarCod_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            ClienteBO clienteBO = new ClienteBO();
+            //Cliente cliente = new Cliente();
+            //ClienteBO clienteBO = new ClienteBO();
 
-            try
-            {
-                cliente.Cod = Convert.ToInt16(txtCodigo.Text);
-                clienteBO.Buscar(cliente);
+            //try
+            //{
+            //    cliente.Cod = Convert.ToInt16(txtCodigo.Text);
+            //    clienteBO.Buscar(cliente);
 
-                if (cliente.Nome == "")
-                {
-                    MessageBox.Show("Cliente não encontrado");
-                    txtNome.Clear();
-                    txtCpf.Clear();
-                    mskCep.Clear();
-                    txtEndereco.Clear();
-                    txtCidade.Clear();
-                    txtNumero.Clear();
-                    mskTelefone.Clear();
-                    txtEmail.Clear();
-                }
-                else
-                {
-                    cliente.Nome = txtNome.Text;
-                    cliente.Cpf = Convert.ToInt64(txtCpf.Text);
-                    cliente.Cep = mskCep.Text;
-                    cliente.Endereco = txtEndereco.Text;
-                    cliente.Cidade = txtCidade.Text;
-                    cliente.Numero = txtNumero.Text;
-                    cliente.Telefone = mskTelefone.Text;
-                    cliente.Email = txtEmail.Text;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Preencha corretamente as informações");
-            }
+            //    if (cliente.Nome == "")
+            //    {
+            //        MessageBox.Show("Cliente não encontrado");
+            //        txtNome.Clear();
+            //        txtCpf.Clear();
+            //        mskCep.Clear();
+            //        txtEndereco.Clear();
+            //        txtCidade.Clear();
+            //        txtNumero.Clear();
+            //        mskTelefone.Clear();
+            //        txtEmail.Clear();
+            //    }
+            //    else
+            //    {
+            //        cliente.Nome = txtNome.Text;
+            //        cliente.Cpf = Convert.ToInt64(txtCpf.Text);
+            //        cliente.Cep = mskCep.Text;
+            //        cliente.Endereco = txtEndereco.Text;
+            //        cliente.Cidade = txtCidade.Text;
+            //        cliente.Numero = txtNumero.Text;
+            //        cliente.Telefone = mskTelefone.Text;
+            //        cliente.Email = txtEmail.Text;
+            //    }
+            //}
+            //catch
+            //{
+            //    //MessageBox.Show("Preencha corretamente as informações");
+            //    cliente.Nome = txtNome.Text;
+
+            //}
 
             btnExcluir.Enabled = true;
             btnEditar.Enabled = true;
@@ -264,6 +268,7 @@ namespace PetShop
             Cliente cliente = new Cliente();
             ClienteBO clienteBO = new ClienteBO();
 
+            cliente.Cod = Convert.ToInt16(txtCodigo.Text);
             cliente.Nome = txtNome.Text;
             cliente.Cpf = Convert.ToInt64(txtCpf.Text);
             cliente.Cep = mskCep.Text;
@@ -277,7 +282,6 @@ namespace PetShop
             MessageBox.Show("Cliente editado com sucesso");
 
 
-
             txtCodigo.Enabled = false;
             txtNome.Enabled = false;
             txtCpf.Enabled = false;
@@ -287,7 +291,6 @@ namespace PetShop
             txtNumero.Enabled = false;
             mskTelefone.Enabled = false;
             txtEmail.Enabled = false;
-
 
             btnSalvar.Enabled = false;
             btnEditar.Enabled = false;

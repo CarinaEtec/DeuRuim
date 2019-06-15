@@ -15,3 +15,4 @@ C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete
 C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.exe
 C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.pdb
 C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.frmFuncionario.resources
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.frmPet.resources

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BO\ClienteBO.cs" />
     <Compile Include="BO\FuncionarioBO.cs" />
+    <Compile Include="BO\PetBO.cs" />
     <Compile Include="Connected Services\WSCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,6 +60,7 @@
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ConexaoBanco.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\PetDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +79,12 @@
     <Compile Include="frmFuncionario.Designer.cs">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPet.Designer.cs">
+      <DependentUpon>frmPet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Pessoa.cs" />
@@ -92,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPet.resx">
+      <DependentUpon>frmPet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

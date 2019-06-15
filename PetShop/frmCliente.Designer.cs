@@ -335,6 +335,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnBuscar);
             this.Name = "frmCliente";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
