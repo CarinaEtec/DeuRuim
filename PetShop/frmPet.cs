@@ -54,8 +54,8 @@ namespace PetShop
             pet.Nome = txtNome.Text;
             pet.Especie = txtEspecie.Text;
             pet.Raca = txtRaca.Text;
-            pet.Sexo = txtSexo.Text;
             pet.Porte = txtPorte.Text;
+            pet.Sexo = txtSexo.Text;
             pet.Cor = txtCor.Text;
 
             petBO.Gravar(pet);

@@ -40,5 +40,13 @@ namespace PetShop
             pet.Closed += (s, args) => this.Close();
             pet.Show();
         }
+
+        private void btnServico_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmServico servico = new frmServico();
+            servico.Closed += (s, args) => this.Close();
+            servico.Show();
+        }
     }
 }

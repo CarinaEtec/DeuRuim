@@ -13,20 +13,53 @@ namespace PetShop.BO
         public void Gravar(Pet pet)
         {
             PetDAO petDao = new PetDAO();
-            if ((pet.Nome != "")) //&& (cliente.Telefone != ""))
+            if ((pet.Nome != "") && (pet.Cliente.Cod != 0))
             {
                 petDao.Insert(pet);
             }
         }
 
+
         public void Editar(Pet pet)
         {
             PetDAO petDao = new PetDAO();
-            if ((pet.Nome != ""))
+            if ((pet.Nome != "") && (pet.Cliente.Cod != 0))
             {
                 petDao.Update(pet);
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void Deletar(Pet pet)
+        {
+            PetDAO petDao = new PetDAO();
+
+            if (pet.CodPet > 0)
+            {
+                petDao.Delete(pet);
+            }
+        }
+
+
+
+
+
+
 
         public void Buscar(Pet pet)
         {
@@ -48,16 +81,5 @@ namespace PetShop.BO
 
             }
         }
-
-        public void Deletar(Pet pet)
-        {
-            PetDAO petDao = new PetDAO();
-
-            if (pet.CodPet > 0)
-            {
-                petDao.Delete(pet);
-            }
-        }
-
     }
 }

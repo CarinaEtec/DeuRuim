@@ -78,44 +78,45 @@ namespace PetShop
 
         private void btnBuscarCod_Click(object sender, EventArgs e)
         {
-            //Cliente cliente = new Cliente();
-            //ClienteBO clienteBO = new ClienteBO();
 
-            //try
-            //{
-            //    cliente.Cod = Convert.ToInt16(txtCodigo.Text);
-            //    clienteBO.Buscar(cliente);
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
 
-            //    if (cliente.Nome == "")
-            //    {
-            //        MessageBox.Show("Cliente não encontrado");
-            //        txtNome.Clear();
-            //        txtCpf.Clear();
-            //        mskCep.Clear();
-            //        txtEndereco.Clear();
-            //        txtCidade.Clear();
-            //        txtNumero.Clear();
-            //        mskTelefone.Clear();
-            //        txtEmail.Clear();
-            //    }
-            //    else
-            //    {
-            //        cliente.Nome = txtNome.Text;
-            //        cliente.Cpf = Convert.ToInt64(txtCpf.Text);
-            //        cliente.Cep = mskCep.Text;
-            //        cliente.Endereco = txtEndereco.Text;
-            //        cliente.Cidade = txtCidade.Text;
-            //        cliente.Numero = txtNumero.Text;
-            //        cliente.Telefone = mskTelefone.Text;
-            //        cliente.Email = txtEmail.Text;
-            //    }
-            //}
-            //catch
-            //{
-            //    //MessageBox.Show("Preencha corretamente as informações");
-            //    cliente.Nome = txtNome.Text;
+            try
+            {
+                cliente.Cod = Convert.ToInt16(txtCodigo.Text);
+                clienteBO.Buscar(cliente);
 
-            //}
+                if (cliente.Nome == "")
+                {
+                    MessageBox.Show("Cliente não encontrado");
+                    txtNome.Clear();
+                    txtCpf.Clear();
+                    mskCep.Clear();
+                    txtEndereco.Clear();
+                    txtCidade.Clear();
+                    txtNumero.Clear();
+                    mskTelefone.Clear();
+                    txtEmail.Clear();
+                }
+                else
+                {
+                    cliente.Nome = txtNome.Text;
+                    cliente.Cpf = Convert.ToInt64(txtCpf.Text);
+                    cliente.Cep = mskCep.Text;
+                    cliente.Endereco = txtEndereco.Text;
+                    cliente.Cidade = txtCidade.Text;
+                    cliente.Numero = txtNumero.Text;
+                    cliente.Telefone = mskTelefone.Text;
+                    cliente.Email = txtEmail.Text;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+                cliente.Nome = txtNome.Text;
+
+            }
 
             btnExcluir.Enabled = true;
             btnEditar.Enabled = true;

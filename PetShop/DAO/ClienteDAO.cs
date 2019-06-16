@@ -101,16 +101,54 @@ namespace PetShop.DAO
         //cliente.Telefone = (string)dr["telefone"];
         //cliente.Email = (string)dr["email"];
 
-        //cliente.Cod = 0;
-        //cliente.Nome = "";
-        //cliente.Cpf = 0;
-        //cliente.Cep = "";
-        //cliente.Endereco = "";
-        //cliente.Cidade = "";
-        //cliente.Numero = "";
-        //cliente.Telefone = "";
-        //cliente.Email = "";
 
+
+
+
+
+
+
+
+
+        public Cliente BuscaPorCod(int Cod) 
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from cliente where codcli=@codcli";
+
+            comando.Parameters.AddWithValue("@codcli", Cod);
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            Cliente cliente = new Cliente();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                cliente.Cod = (int)dr["codcli"];
+                cliente.Nome = (string)dr["nome"];
+                cliente.Cpf = (long)dr["cpf"];
+                cliente.Cep = (string)dr["cep"];
+                cliente.Endereco = (string)dr["endereco"];
+                cliente.Cidade = (string)dr["cidade"];
+                cliente.Numero = (string)dr["numero"];
+                cliente.Telefone = (string)dr["telefone"];
+                cliente.Email = (string)dr["email"];
+            }
+            else
+            {
+                cliente.Cod = 0;
+                cliente.Nome = "";
+                cliente.Cpf = 0;
+                cliente.Cep = "";
+                cliente.Endereco = "";
+                cliente.Cidade = "";
+                cliente.Numero = "";
+                cliente.Telefone = "";
+                cliente.Email = "";
+
+            }
+            return cliente;
+        }
 
     }
 }

@@ -16,12 +16,11 @@ namespace PetShop.DAO
         {
             try
             {
-                MySqlCommand comando = new MySqlCommand();
-                comando.CommandType = CommandType.Text;
-                comando.CommandText = "Insert into Pet(codCli,nome,especie,raca,porte,sexo,cor) " +
-                    "values(@codCli,@nome,@especie,@raca,@porte,@sexo,@cor)";
+                MySqlCommand comando = new MySqlCommand();  
+                comando.CommandType = CommandType.Text; 
+                comando.CommandText = "Insert into Pet(codcli,nome,especie,raca,porte,sexo,cor) values(@codcli,@nome,@especie,@raca,@porte,@sexo,@cor)";
 
-                comando.Parameters.AddWithValue("@codCli", pet.Cliente);
+                comando.Parameters.AddWithValue("@codCli", pet.Cliente.Cod);
                 comando.Parameters.AddWithValue("@nome", pet.Nome);
                 comando.Parameters.AddWithValue("@especie", pet.Especie);
                 comando.Parameters.AddWithValue("@raca", pet.Raca);
@@ -29,13 +28,20 @@ namespace PetShop.DAO
                 comando.Parameters.AddWithValue("@sexo", pet.Sexo);
                 comando.Parameters.AddWithValue("@cor", pet.Cor);
 
-        ConexaoBanco.CRUD(comando);
+                ConexaoBanco.CRUD(comando);
             }
             catch (Exception ex)
             {
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
         }
+
+            
+
+
+
+
+
 
         public void Update(Pet pet)
         {
@@ -46,7 +52,7 @@ namespace PetShop.DAO
                 comando.CommandText = "Update pet set codCli=@codCli, nome=@nome, especie=@especie, raca=@raca, porte=@porte, " +
                     " sexo=@sexo, cor=@cor where codPet=@codPet";
 
-                comando.Parameters.AddWithValue("@codCli", pet.Cliente);
+                comando.Parameters.AddWithValue("@codCli", pet.Cliente.Cod);
                 comando.Parameters.AddWithValue("@nome", pet.Nome);
                 comando.Parameters.AddWithValue("@especie", pet.Especie);
                 comando.Parameters.AddWithValue("@raca", pet.Raca);

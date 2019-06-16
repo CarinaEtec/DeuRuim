@@ -31,6 +31,7 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnPets = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
+            this.btnServico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCliente
@@ -66,11 +67,23 @@
             this.btnFuncionario.UseVisualStyleBackColor = true;
             this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
             // 
+            // btnServico
+            // 
+            this.btnServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServico.Location = new System.Drawing.Point(22, 269);
+            this.btnServico.Name = "btnServico";
+            this.btnServico.Size = new System.Drawing.Size(163, 51);
+            this.btnServico.TabIndex = 3;
+            this.btnServico.Text = "Serviço";
+            this.btnServico.UseVisualStyleBackColor = true;
+            this.btnServico.Click += new System.EventHandler(this.btnServico_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 313);
+            this.ClientSize = new System.Drawing.Size(228, 348);
+            this.Controls.Add(this.btnServico);
             this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.btnPets);
             this.Controls.Add(this.btnCliente);
@@ -85,6 +98,7 @@
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnPets;
         private System.Windows.Forms.Button btnFuncionario;
+        private System.Windows.Forms.Button btnServico;
     }
 }
 
