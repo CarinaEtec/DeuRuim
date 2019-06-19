@@ -18,6 +18,11 @@ namespace PetShop.Model
         private string sexo;
         private string cor;
 
+        public Pet()
+        {
+            Cliente = new Cliente();
+        }
+
         public int CodPet { get => codPet; set => codPet = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Especie { get => especie; set => especie = value; }
