@@ -15,7 +15,7 @@ namespace PetShop.DAO
 
         public static MySqlConnection Conectar()
         {
-            string stringConexao = "SERVER=localhost;DATABASE=petshop2;UID=root;PASSWORD=;";
+            string stringConexao = "SERVER=localhost;DATABASE=petshop;UID=root;PASSWORD=;";
             MySqlConnection conexao = new MySqlConnection(stringConexao);
             conexao.Open();
             return conexao;

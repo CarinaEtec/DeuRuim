@@ -89,14 +89,7 @@ namespace PetShop
                 if (funcionario.Nome == "")
                 {
                     MessageBox.Show("Funcionário não encontrado");
-                    //txtNome.Clear();
-                    //txtCpf.Clear();
-                    //mskCep.Clear();
-                    //txtEndereco.Clear();
-                    //txtCidade.Clear();
-                    //txtNumero.Clear();
-                    //mskTelefone.Clear();
-                    //txtEmail.Clear();
+                    txtCodigo.Clear();
                 }
                 else
                 {
@@ -109,9 +102,7 @@ namespace PetShop
                     mskTelefone.Text = funcionario.Telefone;
                     txtCartTrab.Text = funcionario.Carttrab;
                     txtSalario.Text = Convert.ToString(funcionario.Salario);
-
                 }
-
             }
 
             catch
@@ -175,7 +166,7 @@ namespace PetShop
             funcionario.Numero = txtNumero.Text;
             funcionario.Telefone = mskTelefone.Text;
             funcionario.Carttrab = txtCartTrab.Text;
-            funcionario.Salario = Convert.ToDouble(txtSalario.Text);
+            funcionario.Salario = Convert.ToDecimal(txtSalario.Text);
 
 
             funcionarioBO.Gravar(funcionario);
@@ -290,7 +281,7 @@ namespace PetShop
             funcionario.Numero = txtNumero.Text;
             funcionario.Telefone = mskTelefone.Text;
             funcionario.Carttrab = txtCartTrab.Text;
-            funcionario.Salario = Convert.ToDouble(txtSalario.Text);
+            funcionario.Salario = Convert.ToDecimal(txtSalario.Text);
 
             funcionarioBO.Editar(funcionario);
             MessageBox.Show("Funcionário editado com sucesso");

@@ -51,20 +51,17 @@ namespace PetShop.BO
             if (funcionario.Cod > 0)
             {
 
-                var funcionarioTemp = funcionarioDAO.BuscaPorCod(funcionario.Cod);
+                var clienteTemp = funcionarioDAO.BuscaPorCod(funcionario.Cod);
 
-                funcionario.Nome = funcionario.Nome;
-                funcionario.Cpf = funcionario.Cpf;
-                funcionario.Cep = funcionario.Cep;
-                funcionario.Endereco = funcionario.Endereco;
-                funcionario.Cidade = funcionario.Cidade;
-                funcionario.Numero = funcionario.Numero;
-                funcionario.Telefone = funcionario.Telefone;
-
-                funcionario.Carttrab = funcionario.Carttrab;
-                funcionario.Salario = funcionario.Salario;
-
-
+                funcionario.Nome = clienteTemp.Nome;
+                funcionario.Cpf = clienteTemp.Cpf;
+                funcionario.Cep = clienteTemp.Cep;
+                funcionario.Endereco = clienteTemp.Endereco;
+                funcionario.Cidade = clienteTemp.Cidade;
+                funcionario.Numero = clienteTemp.Numero;
+                funcionario.Telefone = clienteTemp.Telefone;
+                funcionario.Carttrab = clienteTemp.Carttrab;
+                funcionario.Salario = clienteTemp.Salario;
 
             }
         }

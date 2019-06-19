@@ -94,7 +94,7 @@ namespace PetShop.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from funcionario where CodFunc=@CodFunc";
+            comando.CommandText = "Select * from Funcionario where CodFunc=@CodFunc";
 
             comando.Parameters.AddWithValue("@CodFunc", CodFunc);
 
@@ -113,7 +113,7 @@ namespace PetShop.DAO
                 funcionario.Numero = (string)dr["numero"];
                 funcionario.Telefone = (string)dr["telefone"];
                 funcionario.Carttrab = (string)dr["carttrab"];
-                funcionario.Salario = (double)dr["salario"];
+                funcionario.Salario = (decimal)dr["salario"];
 
             }
             else
@@ -134,3 +134,4 @@ namespace PetShop.DAO
         }
     }
 }
+
