@@ -28,9 +28,6 @@ namespace PetShop.BO
             }
         }
 
-
-
-
         public void Deletar(Servico servico)
         {
             ServicoDAO servicoDao = new ServicoDAO();
@@ -43,8 +40,20 @@ namespace PetShop.BO
 
 
 
+        public void Buscar(Servico servico)
+        {
+            ServicoDAO servicoDao = new ServicoDAO();
 
+            if (servico.CodServ > 0)
+            {
 
+                var clienteTemp = servicoDao.BuscaPorCod(servico.CodServ);
 
+                servico.Tipo = clienteTemp.Tipo;
+                servico.Porte = clienteTemp.Porte;
+                servico.Valor = clienteTemp.Valor;  
+
+            }
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace PetShop
 
             servico.Tipo = txtTipo.Text;
             servico.Porte = txtPorte.Text;
-            servico.Valor = Convert.ToDouble(txtValor.Text);
+            servico.Valor = Convert.ToDecimal(txtValor.Text);
 
             servicoBO.Gravar(servico);
             MessageBox.Show("Serviço cadastrado com sucesso");
@@ -95,7 +95,7 @@ namespace PetShop
             servico.CodServ = Convert.ToInt16(txtCod.Text);
             servico.Tipo = txtTipo.Text;
             servico.Porte = txtPorte.Text;
-            servico.Valor = Convert.ToDouble(txtValor.Text);
+            servico.Valor = Convert.ToDecimal(txtValor.Text);
 
             servicoBO.Editar(servico);
             MessageBox.Show("Serviço editado com sucesso");
@@ -156,48 +156,61 @@ namespace PetShop
             txtValor.Clear();
         }
 
+
+
+
+
         private void btnBuscarCod_Click(object sender, EventArgs e)
         {
-
-            Servico servico = new Servico();
-            ServicoBO servicoBO = new ServicoBO();
+            Servico cliente = new Servico();
+            ServicoBO clienteBO = new ServicoBO();
 
             try
             {
-                servico.CodServ = Convert.ToInt16(txtCod.Text);
-               // servicoBO.Buscar(servico);
+                cliente.CodServ = Convert.ToInt16(txtCod.Text);
+                clienteBO.Buscar(cliente);
 
-                if (servico.Tipo == "")
+                if (cliente.Tipo == "")
                 {
                     MessageBox.Show("Serviço não encontrado");
                     txtCod.Clear();
-                    txtTipo.Clear();
-                    txtPorte.Clear();
-                    txtValor.Clear();
+                    txtCod.Enabled = false;
+                    txtTipo.Enabled = false;
+                    txtPorte.Enabled = false;
+                    txtValor.Enabled = false;
+
+                    btnSalvar.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnExcluir.Enabled = false;
+                    btnBuscarCod.Visible = false;
+                    btnNovo.Enabled = true;
+                    btnBuscar.Enabled = true;
+
                 }
                 else
                 {
-                    servico.Tipo = txtTipo.Text;
-                    servico.Porte = txtPorte.Text;
-                    servico.Valor = Convert.ToDouble(txtValor.Text);
+                    txtTipo.Text = cliente.Tipo;
+                    txtPorte.Text = cliente.Porte;
+                    txtValor.Text = Convert.ToString(cliente.Valor);
+
+                    txtCod.Enabled = false;
+                    txtTipo.Enabled = true;
+                    txtPorte.Enabled = true;
+                    txtValor.Enabled = true;
+
+                    btnExcluir.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnBuscar.Enabled = false;
                 }
+
             }
             catch
             {
                 MessageBox.Show("Preencha corretamente as informações");
             }
 
-            btnExcluir.Enabled = true;
-            btnEditar.Enabled = true;
-            btnBuscar.Enabled = false;
 
 
-
-            /*********************** PARA TESTES *************** DEPOIS APAGAR ********************/
-            txtCod.Enabled = false;
-            txtTipo.Enabled = true;
-            txtPorte.Enabled = true;
-            txtValor.Enabled = true;
         }
     }
 }

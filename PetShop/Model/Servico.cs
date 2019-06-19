@@ -11,11 +11,11 @@ namespace PetShop.Model
         private int codServ;
         private string tipo;
         private string porte;
-        private double valor;
+        private decimal valor;
 
         public int CodServ { get => codServ; set => codServ = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string Porte { get => porte; set => porte = value; }
-        public double Valor { get => valor; set => valor = value; }
+        public decimal Valor { get => valor; set => valor = value; }
     }
 }

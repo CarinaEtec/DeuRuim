@@ -70,5 +70,41 @@ namespace PetShop.DAO
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
         }
+
+
+
+
+
+        public Servico BuscaPorCod(int CodServ)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from servico where CodServ=@CodServ";
+
+            comando.Parameters.AddWithValue("@CodServ", CodServ);
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            Servico servico = new Servico();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                servico.CodServ = (int)dr["CodServ"];
+                servico.Tipo = (string)dr["Tipo"];
+                servico.Porte = (string)dr["Porte"];
+                servico.Valor = (Decimal)dr["Valor"];
+
+
+            }
+            else
+            {
+                servico.CodServ = 0;
+                servico.Tipo = "";
+                servico.Porte = "";
+                servico.Valor = 0;
+
+            }
+            return servico;
+        }
     }
 }

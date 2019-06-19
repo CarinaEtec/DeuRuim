@@ -90,6 +90,26 @@ namespace PetShop
                 {
                     MessageBox.Show("Funcionário não encontrado");
                     txtCodigo.Clear();
+                    txtCodigo.Enabled = false;
+                    txtNome.Enabled = false;
+                    txtCpf.Enabled = false;
+                    mskCep.Enabled = false;
+                    txtEndereco.Enabled = false;
+                    txtCidade.Enabled = false;
+                    txtNumero.Enabled = false;
+                    mskTelefone.Enabled = false;
+                    txtCartTrab.Enabled = false;
+                    txtSalario.Enabled = false;
+
+
+                    btnSalvar.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnExcluir.Enabled = false;
+                    btnBuscarCod.Visible = false;
+                    btnBuscarCep.Visible = false;
+                    btnValidarCpf.Visible = false;
+                    btnNovo.Enabled = true;
+                    btnBuscar.Enabled = true;
                 }
                 else
                 {
@@ -102,6 +122,22 @@ namespace PetShop
                     mskTelefone.Text = funcionario.Telefone;
                     txtCartTrab.Text = funcionario.Carttrab;
                     txtSalario.Text = Convert.ToString(funcionario.Salario);
+
+                    txtCodigo.Enabled = false;
+                    txtNome.Enabled = true;
+                    txtCpf.Enabled = true;
+                    mskCep.Enabled = true;
+                    txtNumero.Enabled = true;
+                    mskTelefone.Enabled = true;
+                    txtCartTrab.Enabled = true;
+                    txtSalario.Enabled = true;
+
+                    btnExcluir.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnBuscar.Enabled = false;
+
+                    btnValidarCpf.Visible = true;
+                    btnBuscarCep.Visible = true;
                 }
             }
 
@@ -110,28 +146,6 @@ namespace PetShop
                 MessageBox.Show("Preencha corretamente as informações");
 
             }
-
-            btnExcluir.Enabled = true;
-            btnEditar.Enabled = true;
-            btnBuscar.Enabled = false;
-
-
-
-            /*********************** PARA TESTES *************** DEPOIS APAGAR ********************/
-
-
-            txtCodigo.Enabled = false;
-            txtNome.Enabled = true;
-            txtCpf.Enabled = true;
-            mskCep.Enabled = true;
-            txtNumero.Enabled = true;
-            mskTelefone.Enabled = true;
-            txtSalario.Enabled = true;
-            txtCartTrab.Enabled = true;
-
-
-            btnValidarCpf.Visible = true;
-            btnBuscarCep.Visible = true;
         }
 
         private void btnBuscarCep_Click(object sender, EventArgs e)

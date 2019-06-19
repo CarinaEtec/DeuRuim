@@ -88,14 +88,26 @@ namespace PetShop
                 if (cliente.Nome == "")
                 {
                     MessageBox.Show("Cliente não encontrado");
-                    txtNome.Clear();
-                    txtCpf.Clear();
-                    mskCep.Clear();
-                    txtEndereco.Clear();
-                    txtCidade.Clear();
-                    txtNumero.Clear();
-                    mskTelefone.Clear();
-                    txtEmail.Clear();
+                    txtCodigo.Clear();
+                    txtCodigo.Enabled = false;
+                    txtNome.Enabled = false;
+                    txtCpf.Enabled = false;
+                    mskCep.Enabled = false;
+                    txtEndereco.Enabled = false;
+                    txtCidade.Enabled = false;
+                    txtNumero.Enabled = false;
+                    mskTelefone.Enabled = false;
+                    txtEmail.Enabled = false;
+
+                    btnSalvar.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnExcluir.Enabled = false;
+                    btnBuscarCod.Visible = false;
+                    btnBuscarCep.Visible = false;
+                    btnValidarCpf.Visible = false;
+                    btnNovo.Enabled = true;
+                    btnBuscar.Enabled = true;
+
                 }
                 else
                 {
@@ -107,6 +119,22 @@ namespace PetShop
                     txtNumero.Text = cliente.Numero;
                     mskTelefone.Text = cliente.Telefone;
                     txtEmail.Text = cliente.Email;
+
+
+                    txtCodigo.Enabled = false;
+                    txtNome.Enabled = true;
+                    txtCpf.Enabled = true;
+                    mskCep.Enabled = true;
+                    txtNumero.Enabled = true;
+                    mskTelefone.Enabled = true;
+                    txtEmail.Enabled = true;
+
+                    btnExcluir.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnBuscar.Enabled = false;
+
+                    btnValidarCpf.Visible = true;
+                    btnBuscarCep.Visible = true;
                 }
 
             }
@@ -117,24 +145,12 @@ namespace PetShop
 
             }
 
-            btnExcluir.Enabled = true;
-            btnEditar.Enabled = true;
-            btnBuscar.Enabled = false;
-
-            btnValidarCpf.Visible = true;
-            btnBuscarCep.Visible = true;
 
 
             /*********************** PARA TESTES *************** DEPOIS APAGAR ********************/
 
 
-            txtCodigo.Enabled = false;
-            txtNome.Enabled = true;
-            txtCpf.Enabled = true;
-            mskCep.Enabled = true;
-            txtNumero.Enabled = true;
-            mskTelefone.Enabled = true;
-            txtEmail.Enabled = true;
+
         }
 
         private void btnBuscarCep_Click(object sender, EventArgs e)
