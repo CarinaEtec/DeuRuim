@@ -43,6 +43,10 @@ namespace PetShop
             btnExcluir.Enabled = false;
             btnBuscarPet.Visible = false;
             btnBuscarCli.Visible = false;
+
+            txtNomeCli.Visible = false;
+
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -81,6 +85,10 @@ namespace PetShop
 
             btnSalvar.Enabled = false;
             btnBuscar.Enabled = true;
+
+            txtNomeCli.Clear();
+            txtNomeCli.Visible = false;
+            btnBuscarCli.Visible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -146,7 +154,7 @@ namespace PetShop
                     btnExcluir.Enabled = true;
                     btnEditar.Enabled = true;
                     btnBuscar.Enabled = false;
-                    btnBuscarCli.Visible = false;
+                    btnBuscarCli.Visible = true;
                 }
             }
             catch
@@ -201,6 +209,10 @@ namespace PetShop
             txtPorte.Clear();
             txtSexo.Clear();
             txtCor.Clear();
+
+            txtNomeCli.Clear();
+            txtNomeCli.Visible = false;
+            btnBuscarCli.Visible = false;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -247,6 +259,10 @@ namespace PetShop
             txtPorte.Clear();
             txtSexo.Clear();
             txtCor.Clear();
+
+            txtNomeCli.Clear();
+            txtNomeCli.Visible = false;
+            btnBuscarCli.Visible = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -267,5 +283,36 @@ namespace PetShop
             btnBuscar.Enabled = false;
             btnBuscarCli.Visible = true;
         }
+
+        private void btnBuscarCli_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
+
+            try
+            {
+                cliente.Cod = Convert.ToInt16(txtCodCli.Text);
+                clienteBO.Buscar(cliente);
+
+                if (cliente.Nome == "")
+                {
+                    MessageBox.Show("Cliente não encontrado");
+                    txtCodCli.Clear();
+                    txtCodCli.Enabled = true;
+
+                }
+                else
+                {
+                    txtNomeCli.Visible = true;
+                    txtNomeCli.Text = cliente.Nome;
+                }
+            }
+
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+            }
+        }
     }
+   
 }

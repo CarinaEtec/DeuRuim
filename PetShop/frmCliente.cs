@@ -144,13 +144,6 @@ namespace PetShop
                 MessageBox.Show("Preencha corretamente as informações");
 
             }
-
-
-
-            /*********************** PARA TESTES *************** DEPOIS APAGAR ********************/
-
-
-
         }
 
         private void btnBuscarCep_Click(object sender, EventArgs e)

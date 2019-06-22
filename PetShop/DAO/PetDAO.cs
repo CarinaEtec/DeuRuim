@@ -62,8 +62,6 @@ namespace PetShop.DAO
             }
         }
 
-
-
         public void Delete(Pet pet)
         {
             try
@@ -81,11 +79,6 @@ namespace PetShop.DAO
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
         }
-
-
-
-
-
 
         public Pet BuscaPorCod(int CodPet)
         {
@@ -122,8 +115,36 @@ namespace PetShop.DAO
             }
             return pet;
         }
-    }   
-}
+
+
+
+        public Cliente BuscaPorTutor(int CodCli)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from cliente where codcli=@codcli";
+
+            comando.Parameters.AddWithValue("@codcli", CodCli);
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            Cliente cliente = new Cliente();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                cliente.Cod = (int)dr["CodCli"];
+                cliente.Nome = (string)dr["nome"];
+
+            }
+            else
+            {
+                cliente.Cod = 0;
+            }
+            return cliente;
+        }
+    }
+}   
+
 
 
 

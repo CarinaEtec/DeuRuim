@@ -41,8 +41,6 @@ namespace PetShop.BO
 
 
 
-
-
         public void Buscar(Pet pet)
         {
             PetDAO livroDao = new PetDAO();
@@ -59,5 +57,20 @@ namespace PetShop.BO
                 pet.Cor = petTemp.Cor;
             }
         }
+
+        public void BuscarTutor(Cliente cliente)
+        {
+            PetDAO clienteDao = new PetDAO();
+
+            if (cliente.Cod > 0)
+            {
+
+                var clienteTemp = clienteDao.BuscaPorTutor(cliente.Cod);
+
+                cliente.Nome = clienteTemp.Nome;
+            }
+        }
+
+
     }
 }
