@@ -34,7 +34,6 @@
             this.txtCodFuncionario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarFuncionario = new System.Windows.Forms.Button();
-            this.btnBuscarServico = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodServico = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -104,16 +103,7 @@
             this.btnBuscarFuncionario.TabIndex = 126;
             this.btnBuscarFuncionario.Text = "Buscar";
             this.btnBuscarFuncionario.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarServico
-            // 
-            this.btnBuscarServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarServico.Location = new System.Drawing.Point(408, 98);
-            this.btnBuscarServico.Name = "btnBuscarServico";
-            this.btnBuscarServico.Size = new System.Drawing.Size(110, 30);
-            this.btnBuscarServico.TabIndex = 128;
-            this.btnBuscarServico.Text = "Buscar";
-            this.btnBuscarServico.UseVisualStyleBackColor = true;
+            this.btnBuscarFuncionario.Click += new System.EventHandler(this.btnBuscarFuncionario_Click);
             // 
             // label3
             // 
@@ -198,7 +188,7 @@
             // 
             this.mskDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskDataHora.Location = new System.Drawing.Point(181, 232);
-            this.mskDataHora.Mask = "0000/00/00 00:00";
+            this.mskDataHora.Mask = "00/00/0000 00:00";
             this.mskDataHora.Name = "mskDataHora";
             this.mskDataHora.Size = new System.Drawing.Size(143, 26);
             this.mskDataHora.TabIndex = 138;
@@ -230,6 +220,7 @@
             this.btnBuscarAtendimento.TabIndex = 141;
             this.btnBuscarAtendimento.Text = "Buscar";
             this.btnBuscarAtendimento.UseVisualStyleBackColor = true;
+            this.btnBuscarAtendimento.Click += new System.EventHandler(this.btnBuscarAtendimento_Click);
             // 
             // frmAtendimento
             // 
@@ -247,7 +238,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCodServico);
-            this.Controls.Add(this.btnBuscarServico);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBuscarFuncionario);
             this.Controls.Add(this.txtCodFuncionario);
@@ -270,7 +260,6 @@
         private System.Windows.Forms.TextBox txtCodFuncionario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarFuncionario;
-        private System.Windows.Forms.Button btnBuscarServico;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodServico;
         private System.Windows.Forms.Label label4;

@@ -29,18 +29,18 @@ namespace PetShop
 
         private void frmAtendimento_Load(object sender, EventArgs e)
         {
-            txtCodigo.Enabled = false;
-            txtCodPet.Enabled = false;
-            txtCodServico.Enabled = false;
-            txtCodFuncionario.Enabled = false;
+            //txtCodigo.Enabled = false;
+           // txtCodPet.Enabled = false;
+            //  txtCodServico.Enabled = false;
+         //   txtCodFuncionario.Enabled = false;
             mskDataHora.Enabled = false;
             txtSituacao.Enabled = false;
 
             btnSalvar.Enabled = false;
-            btnBuscarPet.Visible = false;
-            btnBuscarFuncionario.Visible = false;
-            btnBuscarServico.Visible = false;
-            btnBuscarAtendimento.Visible = false;
+            //btnBuscarPet.Visible = false;
+            //btnBuscarFuncionario.Visible = false;
+            //btnBuscarServico.Visible = false;
+            //btnBuscarAtendimento.Visible = false;
 
         }
 
@@ -53,11 +53,9 @@ namespace PetShop
             mskDataHora.Enabled = true;
             txtSituacao.Enabled = true;
 
-
             btnSalvar.Enabled = true;
             btnBuscarPet.Visible = true;
             btnBuscarFuncionario.Visible = true;
-            btnBuscarServico.Visible = true;
             btnBuscarAtendimento.Visible = false;
         }
 
@@ -93,8 +91,111 @@ namespace PetShop
             btnSalvar.Enabled = false;
             btnBuscarPet.Visible = false;
             btnBuscarFuncionario.Visible = false;
-            btnBuscarServico.Visible = false;
             btnBuscarAtendimento.Visible = false;
+        }
+
+        private void btnBuscarAtendimento_Click(object sender, EventArgs e)
+        {
+            Atendimento atendimento = new Atendimento();
+            AtendimentoBO atendimentoBO = new AtendimentoBO();
+
+            try
+            {
+                atendimento.CodAtend = Convert.ToInt16(txtCodigo.Text);
+                atendimentoBO.BuscarAtendimento(atendimento);
+
+
+                if (atendimento.Situacao == "")
+                {
+                    MessageBox.Show("Atendimento não encontrado");
+                    txtCodigo.Clear();
+                    txtCodigo.Enabled = false;
+                    txtCodPet.Enabled = false;
+                    txtCodServico.Enabled = false;
+                    txtCodFuncionario.Enabled = false;
+                    mskDataHora.Enabled = false;
+                    txtSituacao.Enabled = false;
+
+                    btnSalvar.Enabled = false;
+                  
+                    btnBuscarPet.Visible = true;
+                    btnBuscarAtendimento.Visible = true;
+                    btnBuscarFuncionario.Visible = true;
+                    btnNovo.Enabled = true;
+                }
+                else
+                {
+                    txtCodigo.Text = Convert.ToString(atendimento.CodAtend);
+                    txtCodServico.Text = Convert.ToString(atendimento.Servico.CodServ);
+                    txtCodPet.Text = Convert.ToString(atendimento.Pet.CodPet);
+                    txtCodFuncionario.Text = Convert.ToString(atendimento.Funcionario.Cod);
+                    mskDataHora.Text = Convert.ToString(atendimento.DataHora);
+                    txtSituacao.Text = atendimento.Situacao;
+
+                    txtCodigo.Enabled = false;
+                    txtCodPet.Enabled = true;
+                    txtCodServico.Enabled = true;
+                    txtCodFuncionario.Enabled = true;
+                    mskDataHora.Enabled = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+            }
+
+        }
+
+        private void btnBuscarFuncionario_Click(object sender, EventArgs e)
+        {
+            Atendimento atendimento = new Atendimento();
+            AtendimentoBO atendimentoBO = new AtendimentoBO();
+
+            try
+            {
+                atendimento.Funcionario.Cod = Convert.ToInt16(txtCodFuncionario.Text);
+                atendimentoBO.BuscaPorFuncionario(atendimento);
+
+
+                if (atendimento.Situacao == "")
+                {
+                    MessageBox.Show("Atendimento não encontrado");
+                    txtCodigo.Clear();
+                    txtCodigo.Enabled = false;
+                    txtCodPet.Enabled = false;
+                    txtCodServico.Enabled = false;
+                    txtCodFuncionario.Enabled = false;
+                    mskDataHora.Enabled = false;
+                    txtSituacao.Enabled = false;
+
+                    btnSalvar.Enabled = false;
+
+                    btnBuscarPet.Visible = true;
+                    btnBuscarAtendimento.Visible = true;
+                    btnBuscarFuncionario.Visible = true;
+                    btnNovo.Enabled = true;
+                }
+                else
+                {
+                    txtCodigo.Text = Convert.ToString(atendimento.CodAtend);
+                    txtCodServico.Text = Convert.ToString(atendimento.Servico.CodServ);
+                    txtCodPet.Text = Convert.ToString(atendimento.Pet.CodPet);
+                    txtCodFuncionario.Text = Convert.ToString(atendimento.Funcionario.Cod);
+                    mskDataHora.Text = Convert.ToString(atendimento.DataHora);
+                    txtSituacao.Text = atendimento.Situacao;
+
+                    txtCodigo.Enabled = false;
+                    txtCodPet.Enabled = true;
+                    txtCodServico.Enabled = true;
+                    txtCodFuncionario.Enabled = true;
+                    mskDataHora.Enabled = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+            }
+
         }
     }
 }
