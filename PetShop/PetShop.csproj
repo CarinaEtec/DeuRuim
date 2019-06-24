@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\AtendimentoBO.cs" />
     <Compile Include="BO\ClienteBO.cs" />
     <Compile Include="BO\FuncionarioBO.cs" />
     <Compile Include="BO\PetBO.cs" />
@@ -58,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AtendimentoDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ConexaoBanco.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
@@ -68,6 +70,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAtendimento.Designer.cs">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
@@ -93,6 +101,7 @@
     <Compile Include="frmServico.Designer.cs">
       <DependentUpon>frmServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Atendimento.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Pessoa.cs" />
@@ -103,6 +112,9 @@
     <Compile Include="ValidacaoCPF.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAtendimento.resx">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>

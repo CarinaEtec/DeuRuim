@@ -53,3 +53,4 @@ C:\Users\30658.ETECPAOF\Desktop\VisualStudio\DeuRuim\PetShop\bin\Debug\Google.Pr
 C:\Users\30658.ETECPAOF\Desktop\VisualStudio\DeuRuim\PetShop\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\30658.ETECPAOF\Desktop\VisualStudio\DeuRuim\PetShop\bin\Debug\MySql.Data.xml
 C:\Users\30658.ETECPAOF\Desktop\VisualStudio\DeuRuim\PetShop\obj\Debug\PetShop.csproj.CopyComplete
+C:\Users\carina\Desktop\PetShop\PetShop\obj\Debug\PetShop.frmAtendimento.resources

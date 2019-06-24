@@ -48,5 +48,13 @@ namespace PetShop
             servico.Closed += (s, args) => this.Close();
             servico.Show();
         }
+
+        private void btnAtendimento_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAtendimento atendimento = new frmAtendimento();
+            atendimento.Closed += (s, args) => this.Close();
+            atendimento.Show();
+        }
     }
 }
