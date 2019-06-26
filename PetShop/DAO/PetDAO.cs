@@ -116,8 +116,6 @@ namespace PetShop.DAO
             return pet;
         }
 
-
-
         public Cliente BuscaPorTutor(int CodCli)
         {
             MySqlCommand comando = new MySqlCommand();
@@ -142,8 +140,54 @@ namespace PetShop.DAO
             }
             return cliente;
         }
+
+
+
+
+
+
+
+
+
+        public IList<Pet> BuscarPorPet(string nome)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from pet where nome like @nome";
+
+            comando.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            IList<Pet> pets = new List<Pet>();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Pet pet = new Pet();
+                    pet.CodPet = (int)dr["CodPet"];
+                    pet.Cliente.Cod = (int)dr["CodCli"];
+                    pet.Nome = (string)dr["nome"];
+                    pet.Especie = (string)dr["especie"];
+                    pet.Raca = (string)dr["raca"];
+                    pet.Porte = (string)dr["porte"];
+                    pet.Sexo = (string)dr["sexo"];
+                    pet.Cor = (string)dr["cor"];
+
+                    pets.Add(pet);
+                }
+            }
+            else
+            {
+                pets = null;
+
+            }
+            return pets;
+        }
     }
-}   
+}
+ 
 
 
 

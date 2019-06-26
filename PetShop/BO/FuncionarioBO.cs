@@ -38,12 +38,6 @@ namespace PetShop.BO
             }
         }
 
-
-
-
-
-
-
         public void Buscar(Funcionario funcionario)
         {
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
@@ -63,6 +57,23 @@ namespace PetShop.BO
                 funcionario.Carttrab = clienteTemp.Carttrab;
                 funcionario.Salario = clienteTemp.Salario;
 
+            }
+        }
+
+
+
+        public IList<Funcionario> BuscarPorFuncionario(Funcionario funcionario)
+        {
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+
+            if (funcionario.Nome != "")
+            {
+                IList<Funcionario> funcionarioTemp = funcionarioDAO.BuscarPorFuncionario(funcionario.Nome);
+                return funcionarioTemp;
+            }
+            else
+            {
+                return null;
             }
         }
     }

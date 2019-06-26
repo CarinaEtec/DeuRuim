@@ -55,6 +55,9 @@
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.btnBuscarCod = new System.Windows.Forms.Button();
+            this.btnBuscarPorNome = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExcluir
@@ -256,7 +259,7 @@
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(122, 62);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(498, 26);
+            this.txtNome.Size = new System.Drawing.Size(376, 26);
             this.txtNome.TabIndex = 3;
             // 
             // txtEndereco
@@ -320,11 +323,34 @@
             this.btnBuscarCod.UseVisualStyleBackColor = true;
             this.btnBuscarCod.Click += new System.EventHandler(this.btnBuscarCod_Click);
             // 
+            // btnBuscarPorNome
+            // 
+            this.btnBuscarPorNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPorNome.Location = new System.Drawing.Point(504, 62);
+            this.btnBuscarPorNome.Name = "btnBuscarPorNome";
+            this.btnBuscarPorNome.Size = new System.Drawing.Size(116, 26);
+            this.btnBuscarPorNome.TabIndex = 53;
+            this.btnBuscarPorNome.Text = "Buscar";
+            this.btnBuscarPorNome.UseVisualStyleBackColor = true;
+            this.btnBuscarPorNome.Click += new System.EventHandler(this.btnBuscarPorNome_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(639, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(711, 405);
+            this.dataGridView1.TabIndex = 54;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 497);
+            this.ClientSize = new System.Drawing.Size(1370, 497);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnBuscarPorNome);
             this.Controls.Add(this.btnValidarCpf);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.btnBuscarCep);
@@ -356,6 +382,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +417,7 @@
         private System.Windows.Forms.MaskedTextBox mskCep;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Button btnBuscarCod;
+        private System.Windows.Forms.Button btnBuscarPorNome;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

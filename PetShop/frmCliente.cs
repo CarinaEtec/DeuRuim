@@ -35,6 +35,8 @@ namespace PetShop
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             btnBuscarCod.Visible = false;
+            btnBuscarPorNome.Visible = false;
+
             btnBuscarCep.Visible = false;
             btnValidarCpf.Visible = false;
 
@@ -70,7 +72,9 @@ namespace PetShop
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             txtCodigo.Enabled = true;
+            txtNome.Enabled = true;
             btnBuscarCod.Visible = true;
+            btnBuscarPorNome.Visible = true;
             btnNovo.Enabled = false;
         }
 
@@ -270,6 +274,11 @@ namespace PetShop
             mskTelefone.Clear();
             txtEmail.Clear();
             txtCodigo.Clear();
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].DataGridView.Columns.Clear();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -320,6 +329,68 @@ namespace PetShop
             mskTelefone.Clear();
             txtEmail.Clear();
             txtCodigo.Clear();
+
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].DataGridView.Columns.Clear();
+            }
+
+        }
+
+        private void btnBuscarPorNome_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            ClienteBO clienteBO = new ClienteBO();
+
+            try
+            {
+                cliente.Nome = txtNome.Text;
+
+                dataGridView1.DataSource = clienteBO.BuscarPorCliente(cliente);
+            }
+            catch
+            {
+                MessageBox.Show("Preencha os dados corretamente");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow linhaSelecionada;
+            linhaSelecionada = dataGridView1.CurrentRow;
+
+
+            txtEmail.Text = linhaSelecionada.Cells[0].Value.ToString();
+            txtCodigo.Text = linhaSelecionada.Cells[1].Value.ToString();
+            txtNome.Text = linhaSelecionada.Cells[2].Value.ToString();
+            txtCpf.Text = linhaSelecionada.Cells[3].Value.ToString();
+            mskCep.Text = linhaSelecionada.Cells[4].Value.ToString();
+            txtEndereco.Text = linhaSelecionada.Cells[5].Value.ToString();
+            txtCidade.Text = linhaSelecionada.Cells[6].Value.ToString();
+            txtNumero.Text = linhaSelecionada.Cells[7].Value.ToString();
+            mskTelefone.Text = linhaSelecionada.Cells[8].Value.ToString();
+
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
+            mskCep.Enabled = true;
+            txtNumero.Enabled = true;
+            mskTelefone.Enabled = true;
+            txtEmail.Enabled = true;
+
+            btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
+            btnBuscar.Enabled = false;
+
+            btnValidarCpf.Visible = true;
+            btnBuscarCep.Visible = true;
+
         }
     }
 }

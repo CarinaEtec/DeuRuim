@@ -87,9 +87,6 @@ namespace PetShop.DAO
             }
         }
 
-
-
-
         public Funcionario BuscaPorCod(int CodFunc)
         {
             MySqlCommand comando = new MySqlCommand();
@@ -132,6 +129,49 @@ namespace PetShop.DAO
             }
             return funcionario;
         }
+
+
+
+
+
+
+        public IList<Funcionario> BuscarPorFuncionario(string nome)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from funcionario where nome like @nome";
+
+            comando.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            IList<Funcionario> funcionarios = new List<Funcionario>();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.Cod = (int)dr["CodFunc"];
+                    funcionario.Nome = (string)dr["nome"];
+                    funcionario.Cpf = (long)dr["cpf"];
+                    funcionario.Cep = (string)dr["cep"];
+                    funcionario.Endereco = (string)dr["endereco"];
+                    funcionario.Cidade = (string)dr["cidade"];
+                    funcionario.Numero = (string)dr["numero"];
+                    funcionario.Telefone = (string)dr["telefone"];
+                    //funcionario.Carttrab = (string)dr["Carttrab"];
+                    //cliente.Salario = (decimal)dr["salario"];
+
+                    funcionarios.Add(funcionario);
+                }
+            }
+            else
+            {
+                funcionarios = null;
+
+            }
+            return funcionarios;
+        }
     }
 }
-

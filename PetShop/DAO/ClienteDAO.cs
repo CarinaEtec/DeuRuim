@@ -37,7 +37,6 @@ namespace PetShop.DAO
             }
         }
 
-
         public void Delete(Cliente cliente)
         {
             try
@@ -55,8 +54,6 @@ namespace PetShop.DAO
                 throw new Exception("Não foi possível se conectar" + ex.Message);
             }
         }
-
-
 
         public void Update(Cliente cliente)
         {
@@ -124,6 +121,50 @@ namespace PetShop.DAO
                 cliente.Email = "";
             }
             return cliente;
+        }
+
+
+
+
+
+
+
+        public IList<Cliente> BuscarPorCliente(string nome)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from cliente where nome like @nome";
+
+            comando.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            IList<Cliente> clientes = new List<Cliente>();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.Cod = (int)dr["CodCli"];
+                    cliente.Nome = (string)dr["nome"];
+                    cliente.Cpf = (long)dr["cpf"];
+                    cliente.Cep = (string)dr["cep"];
+                    cliente.Endereco = (string)dr["endereco"];
+                    cliente.Cidade = (string)dr["cidade"];
+                    cliente.Numero = (string)dr["numero"];
+                    cliente.Telefone = (string)dr["telefone"];
+                    cliente.Email = (string)dr["email"];
+
+                    clientes.Add(cliente);
+                }
+            }
+            else
+            {
+                clientes = null;
+
+            }
+            return clientes;
         }
     }
 }

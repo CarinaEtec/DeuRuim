@@ -29,7 +29,6 @@ namespace PetShop.BO
             }
         }
 
-
         public void Editar(Cliente cliente)
         {
             ClienteDAO clienteDao = new ClienteDAO();
@@ -58,5 +57,22 @@ namespace PetShop.BO
                 cliente.Email = clienteTemp.Email;
             }
         }
+
+
+        public IList<Cliente> BuscarPorCliente(Cliente cliente)
+        {
+            ClienteDAO clienteDao = new ClienteDAO();
+
+            if (cliente.Nome != "")
+            {
+                IList<Cliente> clienteTemp = clienteDao.BuscarPorCliente(cliente.Nome);
+                return clienteTemp;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

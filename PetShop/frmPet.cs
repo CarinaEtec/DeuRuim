@@ -43,6 +43,7 @@ namespace PetShop
             btnExcluir.Enabled = false;
             btnBuscarPet.Visible = false;
             btnBuscarCli.Visible = false;
+            btnBuscarPorNome.Visible = false;
 
             txtNomeCli.Visible = false;
 
@@ -94,8 +95,11 @@ namespace PetShop
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             txtCodigo.Enabled = true;
+            txtNome.Enabled = true;
             btnBuscarPet.Visible = true;
             btnNovo.Enabled = false;
+            btnBuscarPorNome.Visible = true;
+
         }
 
         private void btnBuscarPet_Click(object sender, EventArgs e)
@@ -311,6 +315,58 @@ namespace PetShop
             catch
             {
                 MessageBox.Show("Preencha corretamente as informações");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow linhaSelecionada;
+            linhaSelecionada = dataGridView1.CurrentRow;
+
+            txtCodigo.Text = linhaSelecionada.Cells[0].Value.ToString();
+            txtCodCli.Text = linhaSelecionada.Cells[1].Value.ToString();
+            txtNome.Text = linhaSelecionada.Cells[2].Value.ToString();
+            txtEspecie.Text = linhaSelecionada.Cells[3].Value.ToString();
+            txtRaca.Text = linhaSelecionada.Cells[4].Value.ToString();
+            txtPorte.Text = linhaSelecionada.Cells[5].Value.ToString();
+            txtSexo.Text = linhaSelecionada.Cells[6].Value.ToString();
+            txtCor.Text = linhaSelecionada.Cells[7].Value.ToString();
+
+
+            txtCodigo.Enabled = false;
+            txtCodCli.Enabled = true;
+            txtNome.Enabled = true;
+            txtEspecie.Enabled = true;
+            txtRaca.Enabled = true;
+            txtPorte.Enabled = true;
+            txtSexo.Enabled = true;
+            txtCor.Enabled = true;
+
+            btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
+            btnBuscar.Enabled = false;
+            btnBuscarCli.Visible = true;
+        }
+
+        private void btnBuscarPorNome_Click(object sender, EventArgs e)
+        {
+            Pet pet = new Pet();
+            PetBO petBO = new PetBO();
+
+            try
+            {
+                pet.Nome = txtNome.Text;
+
+                dataGridView1.DataSource = petBO.BuscarPorPet(pet);
+            }
+            catch
+            {
+                MessageBox.Show("Preencha os dados corretamente");
             }
         }
     }
