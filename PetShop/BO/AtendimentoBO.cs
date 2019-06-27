@@ -56,5 +56,26 @@ namespace PetShop.BO
             }
         }
 
+
+        public void BuscaPorPet(Atendimento atendimento)
+        {
+            AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+
+            if (atendimento.Pet.CodPet > 0)
+            {
+                var atendimentoTemp = atendimentoDAO.BuscaPorAtendimento(atendimento.Pet.CodPet);
+
+                atendimento.CodAtend = atendimentoTemp.CodAtend;
+                atendimento.Servico.CodServ = atendimentoTemp.Servico.CodServ;
+                atendimento.Funcionario.Cod = atendimentoTemp.Funcionario.Cod;
+                atendimento.DataHora = atendimentoTemp.DataHora;
+                atendimento.Situacao = atendimentoTemp.Situacao;
+            }
+        }
+
+
+
+
+
     }
 }

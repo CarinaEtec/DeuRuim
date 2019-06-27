@@ -57,6 +57,7 @@
             this.btnBuscarPet.TabIndex = 118;
             this.btnBuscarPet.Text = "Buscar";
             this.btnBuscarPet.UseVisualStyleBackColor = true;
+            this.btnBuscarPet.Click += new System.EventHandler(this.btnBuscarPet_Click);
             // 
             // txtCodPet
             // 
