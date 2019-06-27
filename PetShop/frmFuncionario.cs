@@ -358,36 +358,36 @@ namespace PetShop
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataGridViewRow linhaSelecionada;
-            //linhaSelecionada = dataGridView1.CurrentRow;
+            DataGridViewRow linhaSelecionada;
+            linhaSelecionada = dataGridView1.CurrentRow;
 
 
             //txtSalario.Text = linhaSelecionada.Cells[0].Value.ToString();
             //txtCartTrab.Text = linhaSelecionada.Cells[1].Value.ToString();
-            //txtCodigo.Text = linhaSelecionada.Cells[2].Value.ToString();
-            //txtNome.Text = linhaSelecionada.Cells[3].Value.ToString();
-            //txtCpf.Text = linhaSelecionada.Cells[4].Value.ToString();
-            //mskCep.Text = linhaSelecionada.Cells[5].Value.ToString();
-            //txtEndereco.Text = linhaSelecionada.Cells[6].Value.ToString();
-            //txtCidade.Text = linhaSelecionada.Cells[7].Value.ToString();
-            //txtNumero.Text = linhaSelecionada.Cells[8].Value.ToString();
-            //mskTelefone.Text = linhaSelecionada.Cells[9].Value.ToString();
+            txtCodigo.Text = linhaSelecionada.Cells[2].Value.ToString();
+            txtNome.Text = linhaSelecionada.Cells[3].Value.ToString();
+            txtCpf.Text = linhaSelecionada.Cells[4].Value.ToString();
+            mskCep.Text = linhaSelecionada.Cells[5].Value.ToString();
+            txtEndereco.Text = linhaSelecionada.Cells[6].Value.ToString();
+            txtCidade.Text = linhaSelecionada.Cells[7].Value.ToString();
+            txtNumero.Text = linhaSelecionada.Cells[8].Value.ToString();
+            mskTelefone.Text = linhaSelecionada.Cells[9].Value.ToString();
 
-            //txtCodigo.Enabled = false;
-            //txtNome.Enabled = true;
-            //txtCpf.Enabled = true;
-            //mskCep.Enabled = true;
-            //txtNumero.Enabled = true;
-            //mskTelefone.Enabled = true;
-            //txtSalario.Enabled = true;
-            //txtCartTrab.Enabled = true;
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
+            mskCep.Enabled = true;
+            txtNumero.Enabled = true;
+            mskTelefone.Enabled = true;
+            txtSalario.Enabled = true;
+            txtCartTrab.Enabled = true;
 
-            //btnExcluir.Enabled = true;
-            //btnEditar.Enabled = true;
-            //btnBuscar.Enabled = false;
+            btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
+            btnBuscar.Enabled = false;
 
-            //btnValidarCpf.Visible = true;
-            //btnBuscarCep.Visible = true;
+            btnValidarCpf.Visible = true;
+            btnBuscarCep.Visible = true;
         }
 
         private void btnBuscarPorNome_Click(object sender, EventArgs e)

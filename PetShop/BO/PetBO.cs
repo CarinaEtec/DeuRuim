@@ -79,7 +79,7 @@ namespace PetShop.BO
 
             if (pet.Nome != "")
             {
-                IList<Pet> petTemp = petDao.BuscarPorPet(pet.Nome);
+                IList<Pet> petTemp = petDao.BuscaPorPet(pet.Nome);
                 return petTemp;
             }
             else

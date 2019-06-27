@@ -329,13 +329,13 @@ namespace PetShop
             linhaSelecionada = dataGridView1.CurrentRow;
 
             txtCodigo.Text = linhaSelecionada.Cells[0].Value.ToString();
-            txtCodCli.Text = linhaSelecionada.Cells[1].Value.ToString();
-            txtNome.Text = linhaSelecionada.Cells[2].Value.ToString();
-            txtEspecie.Text = linhaSelecionada.Cells[3].Value.ToString();
-            txtRaca.Text = linhaSelecionada.Cells[4].Value.ToString();
-            txtPorte.Text = linhaSelecionada.Cells[5].Value.ToString();
-            txtSexo.Text = linhaSelecionada.Cells[6].Value.ToString();
-            txtCor.Text = linhaSelecionada.Cells[7].Value.ToString();
+           // txtCodCli.Text = linhaSelecionada.Cells[1].Value.ToString();
+            txtNome.Text = linhaSelecionada.Cells[1].Value.ToString();
+            txtEspecie.Text = linhaSelecionada.Cells[2].Value.ToString();
+            txtRaca.Text = linhaSelecionada.Cells[3].Value.ToString();
+            txtPorte.Text = linhaSelecionada.Cells[4].Value.ToString();
+            txtSexo.Text = linhaSelecionada.Cells[5].Value.ToString();
+            txtCor.Text = linhaSelecionada.Cells[6].Value.ToString();
 
 
             txtCodigo.Enabled = false;
@@ -369,6 +369,5 @@ namespace PetShop
                 MessageBox.Show("Preencha os dados corretamente");
             }
         }
-    }
-   
+    }   
 }

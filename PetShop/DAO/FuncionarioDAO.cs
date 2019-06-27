@@ -160,8 +160,8 @@ namespace PetShop.DAO
                     funcionario.Cidade = (string)dr["cidade"];
                     funcionario.Numero = (string)dr["numero"];
                     funcionario.Telefone = (string)dr["telefone"];
-                    //funcionario.Carttrab = (string)dr["Carttrab"];
-                    //cliente.Salario = (decimal)dr["salario"];
+                    //funcionario.Carttrab = (string)dr["carttrab"];
+                   // funcionario.Salario = (decimal)dr["salario"];
 
                     funcionarios.Add(funcionario);
                 }
@@ -169,7 +169,6 @@ namespace PetShop.DAO
             else
             {
                 funcionarios = null;
-
             }
             return funcionarios;
         }

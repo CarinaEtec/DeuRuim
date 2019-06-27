@@ -149,11 +149,11 @@ namespace PetShop.DAO
 
 
 
-        public IList<Pet> BuscarPorPet(string nome)
+        public IList<Pet> BuscaPorPet(string nome)
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from pet where nome like @nome";
+            comando.CommandText = "Select * from Pet where nome like @nome";
 
             comando.Parameters.AddWithValue("@nome", "%" + nome + "%");
 
@@ -181,17 +181,14 @@ namespace PetShop.DAO
             else
             {
                 pets = null;
-
             }
             return pets;
         }
     }
 }
- 
 
 
 
 
 
 
-   

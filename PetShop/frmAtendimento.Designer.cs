@@ -46,12 +46,13 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscarAtendimento = new System.Windows.Forms.Button();
+            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBuscarPet
             // 
             this.btnBuscarPet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPet.Location = new System.Drawing.Point(408, 136);
+            this.btnBuscarPet.Location = new System.Drawing.Point(339, 136);
             this.btnBuscarPet.Name = "btnBuscarPet";
             this.btnBuscarPet.Size = new System.Drawing.Size(110, 30);
             this.btnBuscarPet.TabIndex = 118;
@@ -98,7 +99,7 @@
             // btnBuscarFuncionario
             // 
             this.btnBuscarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarFuncionario.Location = new System.Drawing.Point(408, 179);
+            this.btnBuscarFuncionario.Location = new System.Drawing.Point(339, 179);
             this.btnBuscarFuncionario.Name = "btnBuscarFuncionario";
             this.btnBuscarFuncionario.Size = new System.Drawing.Size(110, 30);
             this.btnBuscarFuncionario.TabIndex = 126;
@@ -215,7 +216,7 @@
             // btnBuscarAtendimento
             // 
             this.btnBuscarAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAtendimento.Location = new System.Drawing.Point(408, 56);
+            this.btnBuscarAtendimento.Location = new System.Drawing.Point(339, 56);
             this.btnBuscarAtendimento.Name = "btnBuscarAtendimento";
             this.btnBuscarAtendimento.Size = new System.Drawing.Size(110, 30);
             this.btnBuscarAtendimento.TabIndex = 141;
@@ -223,11 +224,23 @@
             this.btnBuscarAtendimento.UseVisualStyleBackColor = true;
             this.btnBuscarAtendimento.Click += new System.EventHandler(this.btnBuscarAtendimento_Click);
             // 
+            // btnBuscarPeriodo
+            // 
+            this.btnBuscarPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPeriodo.Location = new System.Drawing.Point(339, 230);
+            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
+            this.btnBuscarPeriodo.Size = new System.Drawing.Size(110, 30);
+            this.btnBuscarPeriodo.TabIndex = 142;
+            this.btnBuscarPeriodo.Text = "Buscar";
+            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
+            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBuscarPeriodo);
             this.Controls.Add(this.btnBuscarAtendimento);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label6);
@@ -273,5 +286,6 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscarAtendimento;
+        private System.Windows.Forms.Button btnBuscarPeriodo;
     }
 }

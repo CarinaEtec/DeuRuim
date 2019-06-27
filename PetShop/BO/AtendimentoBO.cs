@@ -48,7 +48,6 @@ namespace PetShop.BO
 
                 atendimento.CodAtend = atendimentoTemp.CodAtend;
                 atendimento.Servico.CodServ = atendimentoTemp.Servico.CodServ;
-
                 atendimento.Pet.CodPet = atendimentoTemp.Pet.CodPet;
                 atendimento.DataHora = atendimentoTemp.DataHora;
                 atendimento.Situacao = atendimentoTemp.Situacao;
@@ -63,7 +62,7 @@ namespace PetShop.BO
 
             if (atendimento.Pet.CodPet > 0)
             {
-                var atendimentoTemp = atendimentoDAO.BuscaPorAtendimento(atendimento.Pet.CodPet);
+                var atendimentoTemp = atendimentoDAO.BuscaPorPet(atendimento.Pet.CodPet);
 
                 atendimento.CodAtend = atendimentoTemp.CodAtend;
                 atendimento.Servico.CodServ = atendimentoTemp.Servico.CodServ;
@@ -73,6 +72,23 @@ namespace PetShop.BO
             }
         }
 
+
+
+        public void BuscaPorPeriodo(Atendimento atendimento)
+        {
+            AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+
+            if (atendimento.DataHora != null)
+            {
+                var atendimentoTemp = atendimentoDAO.BuscaPorPeriodo(atendimento.DataHora);
+
+                atendimento.CodAtend = atendimentoTemp.CodAtend;
+                atendimento.Servico.CodServ = atendimentoTemp.Servico.CodServ;
+                atendimento.Funcionario.Cod = atendimentoTemp.Funcionario.Cod;
+                atendimento.Pet.CodPet = atendimentoTemp.Pet.CodPet;
+                atendimento.Situacao = atendimentoTemp.Situacao;
+            }
+        }
 
 
 
