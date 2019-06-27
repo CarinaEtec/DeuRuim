@@ -313,7 +313,7 @@
             this.btnBuscarPorNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPorNome.Location = new System.Drawing.Point(504, 115);
             this.btnBuscarPorNome.Name = "btnBuscarPorNome";
-            this.btnBuscarPorNome.Size = new System.Drawing.Size(116, 26);
+            this.btnBuscarPorNome.Size = new System.Drawing.Size(110, 26);
             this.btnBuscarPorNome.TabIndex = 117;
             this.btnBuscarPorNome.Text = "Buscar";
             this.btnBuscarPorNome.UseVisualStyleBackColor = true;

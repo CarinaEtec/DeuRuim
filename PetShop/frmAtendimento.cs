@@ -29,18 +29,18 @@ namespace PetShop
 
         private void frmAtendimento_Load(object sender, EventArgs e)
         {
-            //txtCodigo.Enabled = false;
-           // txtCodPet.Enabled = false;
-            //  txtCodServico.Enabled = false;
-         //   txtCodFuncionario.Enabled = false;
-           // mskDataHora.Enabled = false;
-          //  txtSituacao.Enabled = false;
+            txtCodigo.Enabled = false;
+            txtCodPet.Enabled = false;
+            txtCodServico.Enabled = false;
+            txtCodFuncionario.Enabled = false;
+            mskDataHora.Enabled = false;
+            txtSituacao.Enabled = false;
 
             btnSalvar.Enabled = false;
-            //btnBuscarPet.Visible = false;
-            //btnBuscarFuncionario.Visible = false;
-            //btnBuscarServico.Visible = false;
-            //btnBuscarAtendimento.Visible = false;
+            btnBuscarPet.Visible = false;
+            btnBuscarFuncionario.Visible = false;
+            btnBuscarPeriodo.Visible = false;
+            btnBuscarAtendimento.Visible = false;
 
         }
 
@@ -54,9 +54,7 @@ namespace PetShop
             txtSituacao.Enabled = true;
 
             btnSalvar.Enabled = true;
-            btnBuscarPet.Visible = true;
-            btnBuscarFuncionario.Visible = true;
-            btnBuscarAtendimento.Visible = false;
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -276,6 +274,7 @@ namespace PetShop
                     btnBuscarPet.Visible = true;
                     btnBuscarAtendimento.Visible = true;
                     btnBuscarFuncionario.Visible = true;
+                    btnBuscarPeriodo.Visible = true;
                     btnNovo.Enabled = true;
                 }
                 else
@@ -298,6 +297,31 @@ namespace PetShop
             {
                 MessageBox.Show("Preencha corretamente as informações");
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            btnBuscarPet.Visible = true;
+            btnBuscarAtendimento.Visible = true;
+            btnBuscarFuncionario.Visible = true;
+            btnBuscarPeriodo.Visible = true;
+            btnSalvar.Enabled = false;
+
+            txtCodigo.Enabled = true;
+            txtCodPet.Enabled = true;
+            txtCodServico.Enabled = true;
+            txtCodFuncionario.Enabled = true;
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Clear();
+            txtCodPet.Clear();
+            txtCodServico.Clear();
+            txtCodFuncionario.Clear();
+            mskDataHora.Clear();
+            txtSituacao.Clear();
         }
     }
 }

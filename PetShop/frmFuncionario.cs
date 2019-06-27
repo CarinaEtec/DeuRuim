@@ -271,6 +271,7 @@ namespace PetShop
             btnBuscarCod.Visible = false;
             btnBuscarCep.Visible = false;
             btnValidarCpf.Visible = false;
+            btnBuscarPorNome.Visible = false;
 
             btnNovo.Enabled = true;
             btnBuscar.Enabled = true;

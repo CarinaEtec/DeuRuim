@@ -250,7 +250,7 @@ namespace PetShop
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             btnBuscarPet.Visible = false;
-
+            btnBuscarPorNome.Visible = false;
 
             btnNovo.Enabled = true;
             btnBuscar.Enabled = true;

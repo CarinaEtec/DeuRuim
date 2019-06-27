@@ -47,6 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscarAtendimento = new System.Windows.Forms.Button();
             this.btnBuscarPeriodo = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBuscarPet
@@ -156,7 +158,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(260, 352);
+            this.btnVoltar.Location = new System.Drawing.Point(198, 388);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(116, 30);
             this.btnVoltar.TabIndex = 137;
@@ -167,7 +169,7 @@
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Location = new System.Drawing.Point(16, 352);
+            this.btnNovo.Location = new System.Drawing.Point(11, 352);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(116, 30);
             this.btnNovo.TabIndex = 135;
@@ -178,7 +180,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(138, 352);
+            this.btnSalvar.Location = new System.Drawing.Point(133, 352);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(116, 30);
             this.btnSalvar.TabIndex = 136;
@@ -235,11 +237,35 @@
             this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
             this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(255, 352);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 30);
+            this.btnBuscar.TabIndex = 143;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(377, 352);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(116, 30);
+            this.btnLimpar.TabIndex = 144;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(520, 450);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnBuscarPeriodo);
             this.Controls.Add(this.btnBuscarAtendimento);
             this.Controls.Add(this.txtCodigo);
@@ -260,6 +286,7 @@
             this.Controls.Add(this.txtCodPet);
             this.Controls.Add(this.label1);
             this.Name = "frmAtendimento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAtendimento";
             this.Load += new System.EventHandler(this.frmAtendimento_Load);
             this.ResumeLayout(false);
@@ -287,5 +314,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscarAtendimento;
         private System.Windows.Forms.Button btnBuscarPeriodo;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
